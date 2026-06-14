@@ -10,6 +10,16 @@ Aplikasi ini menggabungkan:
 - Groq Llama
 - Auto Router
 - Streamlit Chat UI
+- Colab + NGROK Demo untuk pengujian sementara
+
+---
+
+## Demo Colab + NGROK
+
+> **Run Demo via Google Colab:**  
+> [Open Colab Demo](https://colab.research.google.com/drive/1BTk0Z9FvF5WDT0SJsBaogdoIkHyZYl-E#scrollTo=x0rkcqCj_W6o)
+
+Notebook Colab digunakan untuk melihat proses development dan menjalankan demo Streamlit melalui NGROK. Link ini bersifat sebagai demo sementara, bukan deployment permanen. Untuk penggunaan final, aplikasi tetap dapat dijalankan melalui Streamlit Cloud atau lokal dengan `streamlit run app.py`.
 
 ---
 
@@ -73,7 +83,42 @@ Aplikasi juga menyediakan:
 
 ---
 
-## 3. Struktur Project
+## 3. Alur Development Notebook
+
+Notebook Colab disusun sebagai dokumentasi proses development dengan section berikut:
+
+```text
+1. API & Environment
+2. Knowledge Base
+3. Load & Chunk
+4. FAISS Index
+5. Gemini RAG Engine
+6. Batch Query
+7. Safe Examples
+8. Cache & Usage
+9. Model Router
+10. Colab Chat Loop
+11. Excel Analyzer
+12. Excel Chat Router
+13. Streamlit Project
+14. NGROK Demo
+15. Final Package
+```
+
+Fungsi utama notebook:
+
+- membangun knowledge base lokal
+- membuat index FAISS
+- menguji RAG dengan Gemini
+- menguji router Gemini/Groq
+- menguji Excel Analyzer
+- membuat file Streamlit `app.py`
+- menjalankan demo Streamlit via NGROK
+- membuat package final untuk GitHub
+
+---
+
+## 4. Struktur Project
 
 ```text
 sales_field_intelligence_streamlit/
@@ -88,17 +133,15 @@ sales_field_intelligence_streamlit/
 │   └── default_sales_field_knowledge.md
 ├── sample_data/
 │   └── sales_field_intelligence_dummy_testing.xlsx
-├── notebooks/
-│   └── Sales_Field_Intelligence_Chatbot_Lite_V2.ipynb   # opsional
 └── exports/
     └── .gitkeep
 ```
 
-Folder `notebooks/` bersifat opsional dan dapat digunakan jika anda ingin melihat proses development dari tahap Colab, pengujian NGROK, RAG, router, dan Excel Analyzer.
+Notebook tidak perlu dimasukkan ke folder repository karena akses proses development sudah disediakan melalui link Colab di bagian atas README.
 
 ---
 
-## 4. Cara Menjalankan Lokal
+## 5. Cara Menjalankan Lokal
 
 Install dependency:
 
@@ -114,7 +157,7 @@ streamlit run app.py
 
 ---
 
-## 5. Cara Menggunakan Aplikasi
+## 6. Cara Menggunakan Aplikasi
 
 1. Buka aplikasi Streamlit.
 2. Masukkan Gemini API Key.
@@ -129,7 +172,24 @@ streamlit run app.py
 
 ---
 
-## 6. Contoh Pertanyaan
+## 7. Cara Menjalankan Demo via Colab + NGROK
+
+1. Buka link Colab Demo di bagian atas README.
+2. Pastikan API Key dan NGROK Token disimpan melalui Colab Secrets.
+3. Jalankan cell setup sesuai urutan notebook.
+4. Jalankan cell Streamlit Project untuk membuat `app.py`.
+5. Jalankan cell NGROK Demo.
+6. Buka link publik yang dihasilkan oleh NGROK.
+
+Catatan:
+
+- NGROK digunakan untuk demo sementara.
+- Link NGROK dapat berubah setiap runtime.
+- Jangan menuliskan API Key atau NGROK Token langsung di notebook.
+
+---
+
+## 8. Contoh Pertanyaan
 
 ### Excel Analyzer
 
@@ -167,7 +227,7 @@ Parafrase kalimat ini agar lebih formal: Sales harus segera follow up nasabah.
 
 ---
 
-## 7. Dataset Dummy
+## 9. Dataset Dummy
 
 Folder `sample_data` berisi data dummy untuk testing:
 
@@ -185,7 +245,7 @@ Pipeline_Activity_Data
 
 ---
 
-## 8. Knowledge Base Default
+## 10. Knowledge Base Default
 
 Folder `knowledge_base` berisi contoh knowledge base default:
 
@@ -197,26 +257,28 @@ Dokumen ini dapat digunakan untuk menguji fitur RAG Knowledge Base.
 
 ---
 
-## 9. Notebook Colab untuk Pengembangan lebih lanjut
-
-Saya menyediakan Notebook Colab untuk melihat proses development dan source untuk pengembangan lebih lanjut.
-
-Rekomendasi penempatan:
-
-```text
-notebooks/Sales_Field_Intelligence_Chatbot_Lite_V2.ipynb
-```
-
----
-
-## 10. API Key dan Security
+## 11. API Key dan Security
 
 Aplikasi tidak menyimpan API Key ke repository. API Key dimasukkan langsung melalui input password di sidebar Streamlit.
 
+Jangan commit file berikut ke GitHub:
+
+```text
+.streamlit/secrets.toml
+.env
+*.key
+```
+
+Jangan menuliskan API Key atau token di:
+
+- `app.py`
+- `README.md`
+- notebook Colab
+- file konfigurasi publik
 
 ---
 
-## 11. Anti-Hallucination Rules
+## 12. Anti-Hallucination Rules
 
 Chatbot tidak boleh mengarang:
 
@@ -231,7 +293,7 @@ Jika data tidak cukup, chatbot wajib menyampaikan keterbatasan analisis.
 
 ---
 
-## 12. Final Test Scenario
+## 13. Final Test Scenario
 
 Gunakan prompt berikut untuk menguji aplikasi:
 
@@ -246,7 +308,25 @@ Gunakan prompt berikut untuk menguji aplikasi:
 
 ---
 
-## 14. Status Project
+## 14. Deployment Streamlit Cloud
+
+1. Upload project ke GitHub.
+2. Buka Streamlit Community Cloud.
+3. Pilih repository project.
+4. Pilih branch utama, misalnya `main`.
+5. Set main file path ke:
+
+```text
+app.py
+```
+
+6. Klik **Deploy**.
+
+Karena API Key dimasukkan lewat UI, Streamlit Secrets tidak wajib digunakan.
+
+---
+
+## 15. Status Project
 
 Project ini dibuat sebagai final project AI chatbot dengan integrasi data pipeline/activity dan knowledge base.
 
@@ -256,5 +336,6 @@ Status final:
 - Excel Analyzer aktif
 - RAG Knowledge Base aktif
 - Gemini/Groq Router aktif
+- Demo Colab + NGROK tersedia
 - Dummy data tersedia
 - README dan struktur project siap untuk GitHub
