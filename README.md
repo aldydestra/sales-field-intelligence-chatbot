@@ -183,7 +183,6 @@ Catatan:
 
 - NGROK digunakan untuk demo sementara.
 - Link NGROK dapat berubah setiap runtime.
-- Jangan menuliskan API Key atau NGROK Token langsung di notebook.
 
 ---
 
