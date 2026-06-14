@@ -37,7 +37,7 @@ User dapat mengupload dokumen knowledge base dalam format:
 - TXT
 - MD
 
-Dokumen akan diproses menjadi vector store FAISS menggunakan embedding lokal.
+Dokumen akan diproses menjadi vector store FAISS menggunakan embedding lokal (Huggingface).
 
 ### Auto Router
 
