@@ -137,8 +137,6 @@ sales_field_intelligence_streamlit/
     └── .gitkeep
 ```
 
-Notebook tidak perlu dimasukkan ke folder repository karena akses proses development sudah disediakan melalui link Colab di bagian atas README.
-
 ---
 
 ## 5. Cara Menjalankan Lokal
