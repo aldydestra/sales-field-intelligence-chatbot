@@ -293,6 +293,5 @@ Gunakan prompt berikut untuk menguji aplikasi:
 ## 14. Status Project
 
 Project ini dibuat sebagai final project AI chatbot dengan integrasi data pipeline/activity dan knowledge base dari Program Maju Bareng AI yang diselenggarakan oleh Hacktiv8.
-```text
-(https://www.hacktiv8.com/projects/avpn-asia)
-```
+
+> [Maju Bareng AI Bersama Hacktiv8](https://www.hacktiv8.com/projects/avpn-asia)
