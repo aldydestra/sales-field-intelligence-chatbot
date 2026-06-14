@@ -258,21 +258,6 @@ Dokumen ini dapat digunakan untuk menguji fitur RAG Knowledge Base.
 
 Aplikasi tidak menyimpan API Key ke repository. API Key dimasukkan langsung melalui input password di sidebar Streamlit.
 
-Jangan commit file berikut ke GitHub:
-
-```text
-.streamlit/secrets.toml
-.env
-*.key
-```
-
-Jangan menuliskan API Key atau token di:
-
-- `app.py`
-- `README.md`
-- notebook Colab
-- file konfigurasi publik
-
 ---
 
 ## 12. Anti-Hallucination Rules
@@ -305,34 +290,6 @@ Gunakan prompt berikut untuk menguji aplikasi:
 
 ---
 
-## 14. Deployment Streamlit Cloud
+## 14. Status Project
 
-1. Upload project ke GitHub.
-2. Buka Streamlit Community Cloud.
-3. Pilih repository project.
-4. Pilih branch utama, misalnya `main`.
-5. Set main file path ke:
-
-```text
-app.py
-```
-
-6. Klik **Deploy**.
-
-Karena API Key dimasukkan lewat UI, Streamlit Secrets tidak wajib digunakan.
-
----
-
-## 15. Status Project
-
-Project ini dibuat sebagai final project AI chatbot dengan integrasi data pipeline/activity dan knowledge base.
-
-Status final:
-
-- Streamlit UI siap digunakan
-- Excel Analyzer aktif
-- RAG Knowledge Base aktif
-- Gemini/Groq Router aktif
-- Demo Colab + NGROK tersedia
-- Dummy data tersedia
-- README dan struktur project siap untuk GitHub
+Project ini dibuat sebagai final project AI chatbot dari Program Maju Bareng AI yang diselenggarakan oleh Hacktiv8 dengan integrasi data pipeline/activity dan knowledge base.
