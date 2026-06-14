@@ -94,7 +94,7 @@ sales_field_intelligence_streamlit/
     └── .gitkeep
 ```
 
-Folder `notebooks/` bersifat opsional dan dapat digunakan jika evaluator/mentor ingin melihat proses development dari tahap Colab, pengujian NGROK, RAG, router, dan Excel Analyzer.
+Folder `notebooks/` bersifat opsional dan dapat digunakan jika anda ingin melihat proses development dari tahap Colab, pengujian NGROK, RAG, router, dan Excel Analyzer.
 
 ---
 
@@ -197,9 +197,9 @@ Dokumen ini dapat digunakan untuk menguji fitur RAG Knowledge Base.
 
 ---
 
-## 9. Notebook Colab untuk Evaluator/Mentor
+## 9. Notebook Colab untuk Pengembangan lebih lanjut
 
-File notebook Colab tidak wajib untuk menjalankan aplikasi Streamlit, tetapi boleh disertakan untuk evaluator/mentor yang ingin melihat proses development secara lebih lengkap.
+Saya menyediakan Notebook Colab untuk melihat proses development dan source untuk pengembangan lebih lanjut.
 
 Rekomendasi penempatan:
 
@@ -207,37 +207,12 @@ Rekomendasi penempatan:
 notebooks/Sales_Field_Intelligence_Chatbot_Lite_V2.ipynb
 ```
 
-Sebelum notebook diupload ke GitHub, pastikan:
-
-1. Tidak ada API Key di dalam notebook.
-2. Tidak ada NGROK token yang ditulis langsung.
-3. Semua token dibaca dari Colab Secrets.
-4. Cell yang menjalankan Streamlit/NGROK diberi flag agar tidak otomatis berjalan.
-5. Output cell yang panjang sudah dibersihkan.
-6. Notebook hanya digunakan sebagai dokumentasi proses, bukan akses utama aplikasi.
-
-NGROK cocok untuk demo sementara dari Colab, tetapi bukan deployment permanen karena link dapat berubah dan bergantung pada runtime Colab.
-
 ---
 
 ## 10. API Key dan Security
 
 Aplikasi tidak menyimpan API Key ke repository. API Key dimasukkan langsung melalui input password di sidebar Streamlit.
 
-Jangan commit file berikut ke GitHub:
-
-```text
-.streamlit/secrets.toml
-.env
-*.key
-```
-
-Jangan menuliskan API Key atau NGROK Token di:
-
-- `app.py`
-- `README.md`
-- notebook Colab
-- file konfigurasi publik
 
 ---
 
@@ -256,25 +231,7 @@ Jika data tidak cukup, chatbot wajib menyampaikan keterbatasan analisis.
 
 ---
 
-## 12. Deployment Streamlit Cloud
-
-1. Upload project ke GitHub.
-2. Buka Streamlit Community Cloud.
-3. Pilih repository project.
-4. Pilih branch utama, misalnya `main`.
-5. Set main file path ke:
-
-```text
-app.py
-```
-
-6. Klik **Deploy**.
-
-Karena API Key dimasukkan lewat UI, Streamlit Secrets tidak wajib digunakan.
-
----
-
-## 13. Final Test Scenario
+## 12. Final Test Scenario
 
 Gunakan prompt berikut untuk menguji aplikasi:
 
